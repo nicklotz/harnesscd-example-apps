@@ -1,5 +1,7 @@
 # Harness CD & GitOps Example Apps
 
+This is a trigger commit
+
 This is a test commit
 
 This repository contains example applications for demoing Harness CD & GitOps functionality. Feel free
