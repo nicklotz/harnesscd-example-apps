@@ -1,4 +1,5 @@
 # Harness CD & GitOps Example Apps
+Some new info
 
 This is a trigger commit
 
