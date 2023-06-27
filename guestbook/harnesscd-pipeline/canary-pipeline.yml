@@ -53,6 +53,20 @@ pipeline:
                         timeout: 10m
                         spec:
                           skipDryRun: false
+              - step:
+                  type: ShellScript
+                  name: Echo Vars
+                  identifier: Echo_Vars
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: echo "Deploying <+service.name> to <+env.name> in K8 <+infra.namespace> namespace"
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
             rollbackSteps:
               - step:
                   name: Canary Delete
@@ -73,3 +87,4 @@ pipeline:
                 - AllErrors
               action:
                 type: StageRollback
+        variables: []
