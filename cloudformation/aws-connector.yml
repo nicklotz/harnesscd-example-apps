@@ -1,14 +1,12 @@
 connector:
-  name: aws-connector
-  identifier: awsconnector
+  name: harness_awsconnector
+  identifier: harnessawsconnector
   description: ""
   orgIdentifier: default
   projectIdentifier: default_project
   type: Aws
   spec:
     credential:
-      crossAccountAccess:
-        crossAccountRoleArn: ROLE_ARN
       type: ManualConfig
       spec:
         accessKey: AWS_ACCESS_KEY
@@ -17,8 +15,8 @@ connector:
     awsSdkClientBackOffStrategyOverride:
       type: FixedDelayBackoffStrategy
       spec:
-        fixedBackoff: 1
-        retryCount: 2
+        fixedBackoff: 0
+        retryCount: 0
     delegateSelectors:
       - DELEGATE_NAME
     executeOnDelegate: true

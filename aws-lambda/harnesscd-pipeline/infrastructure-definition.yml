@@ -1,15 +1,14 @@
 infrastructureDefinition:
-  name: serverless-ec2
-  identifier: serverlessec2
+  name: aws-lambda-infra
+  identifier: awslambdainfra
   description: ""
   tags: {}
   orgIdentifier: default
   projectIdentifier: default_project
   environmentRef: serverlessenv
-  deploymentType: ServerlessAwsLambda
-  type: ServerlessAwsLambda
+  deploymentType: AwsLambda
+  type: AwsLambda
   spec:
-    connectorRef: awsconnector
-    stage: prod
+    connectorRef: awslambda
     region: CLOUD_REGION_NAME
   allowSimultaneousDeployments: false

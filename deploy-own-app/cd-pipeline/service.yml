@@ -1,23 +1,21 @@
 service:
-    name: harness_guestbook
-    identifier: harnessguestbook
+    name: ownapp_service
+    identifier: ownappservice
     serviceDefinition:
         type: Kubernetes
         spec:
             manifests:
                 - manifest:
-                    identifier: guestbook
+                    identifier: ownapp
                     type: K8sManifest
                     spec:
-                      store:
+                    store:
                         type: Github
                         spec:
-                            connectorRef: harnessgitconnector
+                            connectorRef: ownappgitconnector
                             gitFetchType: Branch
                             paths:
-                                - guestbook/guestbook-ui-deployment.yaml
-                                - guestbook/guestbook-ui-svc.yaml
+                                - deploy/kubernetes/complete-demo.yaml
                             branch: master
                         skipResourceVersioning: false
                         enableDeclarativeRollback: false
-    gitOpsEnabled: false
